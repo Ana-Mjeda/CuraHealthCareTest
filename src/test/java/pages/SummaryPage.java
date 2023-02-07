@@ -1,5 +1,11 @@
 package pages;
 
-public class SummaryPage {
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+public class SummaryPage extends BasePage{
+
+    public SummaryPage(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
+    }
 }
