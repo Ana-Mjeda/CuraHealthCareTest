@@ -14,7 +14,11 @@ public class HomePage extends BasePage{
         super(driver, driverWait);
     }
 
-    public void clickMakeAppointmentButton(){
+    public WebElement getMakeAppointmentButton() {
+        return makeAppointmentButton;
+    }
+
+    public void openLogin(){
         makeAppointmentButton.click();
     }
 }
