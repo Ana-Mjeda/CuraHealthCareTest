@@ -10,19 +10,17 @@ import pages.HomePage;
 
 import java.time.Duration;
 
-public class BaseTest {
+public abstract class BaseTest {
 
     protected WebDriver driver;
-
     protected WebDriverWait driverWait;
-
-    protected HomePage homePage;
 
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
         driverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        homePage = new HomePage(driver, driverWait);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
     }
 
     @BeforeMethod
@@ -36,4 +34,3 @@ public class BaseTest {
     }
 }
 
-}
