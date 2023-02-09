@@ -65,7 +65,7 @@ public class AppointmentPage extends BasePage{
     public void makeAppointment(String facility, boolean applyCheckbox, healthcareProgram healthcareProgram,
                                 String visitDate){
         selectFacility(facility);
-        if(applyCheckbox){
+        if(applyCheckbox && !this.applyCheckbox.isSelected()){
             this.applyCheckbox.click();
         }
 
