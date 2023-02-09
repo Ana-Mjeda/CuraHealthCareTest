@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,6 +32,7 @@ public class AppointmentPage extends BasePage{
 
     @FindBy (id = "btn-book-appointment")
     private WebElement bookButton;
+
     public AppointmentPage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
@@ -47,5 +47,19 @@ public class AppointmentPage extends BasePage{
         facilitySelect.selectByVisibleText(facilityName);
     }
 
+    public void chooseProgram(healthcareProgram healthcareProgram){
+        switch (healthcareProgram){
+            case None:
+                radioNone.click();
+                break;
+            case Medicaid:
+                radioMedicaid.click();
+                break;
+            case Medicare:
+                radioMedicare.click();
+                break;
+        }
+
+    }
 
 }
