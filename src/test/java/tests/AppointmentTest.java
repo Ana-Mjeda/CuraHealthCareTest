@@ -1,10 +1,21 @@
 package tests;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.SummaryPage;
 import pages.healthcareProgram;
 
 public class AppointmentTest extends BaseTest{
+
+    private SummaryPage summaryPage;
+
+    @BeforeClass
+    @Override
+    public void beforeClass() {
+        super.beforeClass();
+        summaryPage = new SummaryPage(driver, driverWait);
+    }
 
     @BeforeMethod
     @Override
