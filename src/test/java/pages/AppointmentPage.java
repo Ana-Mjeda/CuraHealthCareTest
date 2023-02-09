@@ -59,7 +59,18 @@ public class AppointmentPage extends BasePage{
                 radioMedicare.click();
                 break;
         }
-
     }
 
+
+    public void makeAppointment(String facility, boolean applyCheckbox, healthcareProgram healthcareProgram,
+                                String visitDate){
+        selectFacility(facility);
+        if(applyCheckbox){
+            this.applyCheckbox.click();
+        }
+
+        chooseProgram(healthcareProgram);
+        this.date.sendKeys(visitDate);
+        this.bookButton.click();
+    }
 }
