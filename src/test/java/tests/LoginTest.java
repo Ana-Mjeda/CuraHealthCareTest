@@ -10,21 +10,6 @@ import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 
-    private HomePage homePage;
-    private LoginPage loginPage;
-    private AppointmentPage appointmentPage;
-
-    private final String username = "John Doe";
-    private final String password = "ThisIsNotAPassword";
-    @BeforeClass
-    @Override
-    public void beforeClass() {
-        super.beforeClass();
-        homePage = new HomePage(driver, driverWait);
-        loginPage = new LoginPage(driver, driverWait);
-        appointmentPage = new AppointmentPage(driver, driverWait);
-    }
-
     @BeforeMethod
     @Override
     public void beforeMethod() {
