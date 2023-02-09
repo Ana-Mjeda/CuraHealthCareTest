@@ -7,30 +7,30 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AppointmentPage extends BasePage{
+public class AppointmentPage extends BasePage {
 
-    @FindBy (xpath = "//*[@id=\"appointment\"]/div/div/form")
+    @FindBy(xpath = "//*[@id=\"appointment\"]/div/div/form")
     private WebElement appointmentForm;
 
-    @FindBy (id = "combo_facility")
+    @FindBy(id = "combo_facility")
     private WebElement facility;
 
-    @FindBy (id = "chk_hospotal_readmission")
+    @FindBy(id = "chk_hospotal_readmission")
     private WebElement applyCheckbox;
 
-    @FindBy (id = "radio_program_medicare")
+    @FindBy(id = "radio_program_medicare")
     private WebElement radioMedicare;
 
-    @FindBy (id = "radio_program_medicaid")
+    @FindBy(id = "radio_program_medicaid")
     private WebElement radioMedicaid;
 
-    @FindBy (id = "radio_program_none")
+    @FindBy(id = "radio_program_none")
     private WebElement radioNone;
 
-    @FindBy (id = "txt_visit_date")
+    @FindBy(id = "txt_visit_date")
     private WebElement date;
 
-    @FindBy (id = "btn-book-appointment")
+    @FindBy(id = "btn-book-appointment")
     private WebElement bookButton;
 
     public AppointmentPage(WebDriver driver, WebDriverWait driverWait) {
@@ -42,13 +42,13 @@ public class AppointmentPage extends BasePage{
         return appointmentForm.isDisplayed();
     }
 
-    public void selectFacility(String facilityName){
+    public void selectFacility(String facilityName) {
         Select facilitySelect = new Select(facility);
         facilitySelect.selectByVisibleText(facilityName);
     }
 
-    public void chooseProgram(healthcareProgram healthcareProgram){
-        switch (healthcareProgram){
+    public void chooseProgram(healthcareProgram healthcareProgram) {
+        switch (healthcareProgram) {
             case None:
                 radioNone.click();
                 break;
@@ -61,11 +61,10 @@ public class AppointmentPage extends BasePage{
         }
     }
 
-
     public void makeAppointment(String facility, boolean applyCheckbox, healthcareProgram healthcareProgram,
-                                String visitDate){
+                                String visitDate) {
         selectFacility(facility);
-        if(applyCheckbox && !this.applyCheckbox.isSelected()){
+        if (applyCheckbox && !this.applyCheckbox.isSelected()) {
             this.applyCheckbox.click();
         }
 

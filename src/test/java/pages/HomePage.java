@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
-    @FindBy (id = "btn-make-appointment")
+    @FindBy(id = "btn-make-appointment")
     private WebElement makeAppointmentButton;
 
     public HomePage(WebDriver driver, WebDriverWait driverWait) {
@@ -18,7 +18,7 @@ public class HomePage extends BasePage{
         return makeAppointmentButton;
     }
 
-    public void openLogin(){
+    public void openLogin() {
         makeAppointmentButton.click();
     }
 }

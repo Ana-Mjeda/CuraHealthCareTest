@@ -1,12 +1,8 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.AppointmentPage;
-import pages.HomePage;
-import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 
@@ -23,7 +19,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginFormPresentedTest")
-    public void loginTest(){
+    public void loginTest() {
         loginPage.login(username, password);
         Assert.assertTrue(driver.getCurrentUrl().contains("#appointment"));
         Assert.assertTrue(appointmentPage.isAppointmentFormPresent());

@@ -15,14 +15,19 @@ import java.time.Duration;
 public abstract class BaseTest {
 
     protected WebDriver driver;
+
     protected WebDriverWait driverWait;
 
     protected HomePage homePage;
+
     protected LoginPage loginPage;
+
     protected AppointmentPage appointmentPage;
 
     protected final String username = "John Doe";
+
     protected final String password = "ThisIsNotAPassword";
+
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
